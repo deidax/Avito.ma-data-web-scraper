@@ -1,0 +1,159 @@
+version: '3.5'
+services:
+  frontend:
+    build:
+        context: ./vuejs_frontend
+        dockerfile: Dockerfile
+    restart: always
+    container_name: frontend_app
+    ports:
+      - "8080:8080"
+    volumes:
+      - frontentdata:/usr/src/app/vuejs_frontend
+      - /usr/src/app/vuejs_frontend/node_modules
+    networks:
+      - monstache-network
+
+  backend:
+    build:
+        context: ./DjangoBackend
+        dockerfile: Dockerfile
+    restart: always
+    container_name: django_server
+    volumes:
+      - backenddata:/pfe/backend
+      - avito-logs-volume:/pfe/backend/logs
+    ports:
+      - "8000:8000"
+    links:
+      - mongo1
+    depends_on:
+      - "mongo1"
+    networks:
+      - monstache-network
+  
+  scrapy-service:
+    build:
+        context: ./avito
+        dockerfile: Dockerfile
+    restart: always
+    container_name: scrapy_server
+    volumes:
+      - ./avito:/pfe/avito-scrapy-server
+      - avito-logs-volume:/pfe/avito-scrapy-server/logs
+    ports:
+      - "6800:6800"
+    networks:
+      - monstache-network
+
+  elasticsearch:
+    image: elasticsearch:7.7.0
+    container_name: elasticsearch
+    volumes: 
+        - esdata:/usr/share/elasticsearch/data
+    env_file:   
+        - elasticsearch.env
+    ports: 
+        - "9200:9200"
+        - "9300:9300"
+    healthcheck:
+      test: "wget -q -O - http://localhost:9200/_cat/health"
+      interval: 1s
+      timeout: 30s
+      retries: 300
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    networks:
+      - monstache-network
+
+  kibana:
+    image: kibana:7.7.0
+    container_name: kibana
+    env_file: 
+      - kibana.env
+    ports: 
+      - "5601:5601"
+    links:
+      - elasticsearch:elasticsearch
+    depends_on:
+      - elasticsearch
+    networks:
+      - monstache-network
+  
+  monstache:
+    restart: always
+    build:
+        context: ./monstache
+        dockerfile: Dockerfile
+    volumes:
+      - monstachedata:/home
+    command: -f /home/monstache.config.toml &
+    depends_on:
+      - elasticsearch
+      - mongo1
+      - mongo2
+      - mongo3
+    links:
+      - elasticsearch
+    # ports:
+    #   - "8080:8080"
+    networks:
+      - monstache-network
+      
+
+  mongo1:
+    image: "mongo"
+    ports:
+      - "27020:27017"
+    volumes:
+      - mongodata:/home/psw/data
+    networks:
+      - monstache-network
+    command: mongod --replSet replication
+  mongo2:
+    image: "mongo"
+    ports:
+      - "27021:27017"
+    volumes:
+      - mongodata1:/home/psw/data
+    networks:
+      - monstache-network
+    command: mongod --replSet replication
+    depends_on:
+      - mongo1
+  mongo3:
+    image: "mongo"
+    ports:
+      - "27022:27017"
+    volumes:
+      - mongodata2:/home/psw/data
+    networks:
+      - monstache-network
+    command: mongod --replSet replication
+    depends_on:
+      - mongo2
+  mongosetup:
+    build:
+        context: ./mongo-setup
+        dockerfile: Dockerfile
+    depends_on:
+      - mongo1
+    networks:
+      - monstache-network
+
+volumes:
+  avito-logs-volume:
+  frontentdata:
+  backenddata:
+  monstachedata:
+  mongodata:
+  mongodata1:
+  mongodata2:
+  mongostatus:
+  esdata:
+
+networks:
+  monstache-network:
+    driver: bridge
