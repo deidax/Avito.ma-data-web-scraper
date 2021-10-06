@@ -17,8 +17,11 @@
                           type="error"
                         >
                           <strong>Oops!..Something is wrong:</strong>
-                          <ul>
-                            <li v-for="(error,index) in getAuthErrors" :key="index">{{error}}</li>
+                          <ul v-if="getAuthErrors.non_field_errors != null">
+                            <li v-for="(error,index) in getAuthErrors.non_field_errors" :key="index">{{error}}</li>
+                          </ul>
+                          <ul v-else>
+                            <li>Please enter a correct username and password</li>
                           </ul>
                         </v-alert>
 

@@ -105,9 +105,11 @@ def getScrapydListJobsApi(request):
             running_project = JSONParser().parse(request)
             scrapyd_list_jobs = []
             scrapyd_list_jobs = scrapyd.list_jobs(running_project['project'])
-            return JsonResponse(scrapyd_list_jobs)
+            if scrapyd_list_jobs is not None:
+                return JsonResponse(scrapyd_list_jobs)
+            return JsonResponse({"message": "No list jobs found"})
         except Exception as e:
-            return JsonResponse({"listJobsApiError": e})
+            return JsonResponse(e, safe=False)
         
 
 @csrf_exempt

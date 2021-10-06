@@ -13,7 +13,7 @@
 
       <v-btn
         text
-        href="http://localhost:5601/">
+        :href="kibana_href">
         <v-icon left>mdi-monitor-dashboard</v-icon>
         Kibana
       </v-btn>
@@ -91,6 +91,7 @@ export default {
   data(){
     return {
       appTitle: 'PFE Project',
+      kibana_href: "http://"+location.hostname+":5601/",
       sidebar: false,
       menuItems: [
           { title: 'Products Data', path: '/products_data', icon: 'mdi-database', id: 1 },

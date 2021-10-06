@@ -4,7 +4,6 @@
         <v-card>
           <v-card-title>
             Crawlers List
-            <!-- {{getRunningCrawlerTaskId['task_id']}} -->
             <v-spacer></v-spacer>
             <v-text-field
               v-model="search"
@@ -66,7 +65,6 @@
                   </v-chip>
                 </span>
                 <span v-else-if="getCrawlerInfo(item.task_id) != null">
-                  <!-- {{getCrawlerInfo(item.task_id).state}} -->
                   <v-chip
                     class="ma-2"
                     small
@@ -146,7 +144,6 @@
                   color="black">
                   <v-icon>mdi-play</v-icon>
                 </v-btn>
-                <!-- <span>{{item.crawlerId}}</span> -->
               </template>
               <template v-slot:item.btn_delete="{ item }">
                 <v-btn
@@ -279,7 +276,6 @@ import CrawlerDetails from './CrawlerDetails.vue';
           { text: ' ', value: 'btn_delete', sortable: false },
           { text: ' ', value: 'details_btn', sortable: false },
         ],
-        // crawlers_data: getCrawlers
       }
     },
 
@@ -294,12 +290,10 @@ import CrawlerDetails from './CrawlerDetails.vue';
       },
 
       refreshCrawlerListData(){
-        // this.getCrawlersData()
         location.reload();
       },  
 
       getJobState(newVal, oldVal){
-          // this.computeTimeToPullCrawlerData(this.getCrawlerDetails.number_of_products_found)
           console.log("TIME TO PULL---> "+this.timeToPullFreshCrawlerData)
           this.pollingFreshCrawlersInfo()
       },
@@ -385,7 +379,6 @@ import CrawlerDetails from './CrawlerDetails.vue';
           this.crawlerAlert = true
           this.crawlerAlertMessage = "Crawler started"
           this.crawlerAlertIcon = 'mdi-spider'
-          // this.pollingFreshCrawlersInfo()
         },
 
         exitRunningJob(taskId){
@@ -465,7 +458,6 @@ import CrawlerDetails from './CrawlerDetails.vue';
         },
 
         pollingFreshCrawlersInfo(){
-          // console.log(this.activateLongPolling)
             var interval = setInterval(
               function () { 
                 this.getAllCrawlers(this.crawlerInProcess)
@@ -491,11 +483,9 @@ import CrawlerDetails from './CrawlerDetails.vue';
                   this.crawlerAlert = true
                   this.crawlerAlertMessage = "Crawler finished"
                   this.crawlerAlertIcon = 'mdi-spider'
-                  // clearInterval(this.$store.getters['Crawler/getPollingInterval'])
                 }
               }
               .bind(this), this.computeTimeToPullCrawlerData(this.getCrawlerDetails.number_of_products_found))
-            // this.polling = interval
         },
 
         timeCountDown(time){
@@ -532,16 +522,11 @@ import CrawlerDetails from './CrawlerDetails.vue';
 
     },
 
-    // beforeDestroy () {
-    //   clearInterval(this.polling)
-    // },
+    
 
     created () {
       this.getCrawlerDetailsApi()
-      // let _lastCrawler = this.getCrawlerDetails.task_id
-      // // this.lastCrawlerTaskId = _lastCrawler['task_id']
-      //   console.log("crawlerDetailsTaskId===>")
-      //   console.log(_lastCrawler)
+      
       if(this.getJobState != 'finished'){
         
         this.pollingFreshCrawlersInfo()

@@ -35,7 +35,7 @@ export const login = ({ commit }, credentials) => {
             console.log(error.response.status)
             commit('SET_USERDATA', null);
             commit('SET_AUTHENTICATED',false);
-            commit('SET_AUTH_ERRORS',error_data.non_field_errors)
+            commit('SET_AUTH_ERRORS',error_data)
             
             if (error.response.status != 400) {
                 let error_message = error.response.status+" "+error.response.statusText

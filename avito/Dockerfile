@@ -3,6 +3,7 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /pfe/avito-scrapy-server
 
+ADD . .
 
 ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv $VIRTUAL_ENV

@@ -42,8 +42,11 @@ class ProductSpider(CrawlSpider):
             Rule(LinkExtractor(restrict_xpaths='//div[contains(@class, "listing")]/div/a'), callback='parse_products', follow=True),
         ]
         print('\n\n')
+        authors = "------- PROJET PFE, MASTER BIG DATA ENSA KENITRA :: KHALIL DIDA & ZAKARIA BOUZANGAD -------\n"
         scrapyTitle = pyfiglet.figlet_format("AvitoScraper", font='speed')
         print(colored(scrapyTitle, 'yellow'))
+        print(colored(authors, 'yellow'))
+        self.logger.info(authors)
         print(colored('__Start URL --> ['+self.start_urls[0]+']\n', 'green'))
         print(colored('__Fields Selected --> ['+self.options+']\n', 'green'))
 

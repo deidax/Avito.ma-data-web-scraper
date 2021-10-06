@@ -39,7 +39,7 @@ services:
     restart: always
     container_name: scrapy_server
     volumes:
-      - ./avito:/pfe/avito-scrapy-server
+      - avitoscraperdata:/pfe/avito-scrapy-server
       - avito-logs-volume:/pfe/avito-scrapy-server/logs
     ports:
       - "6800:6800"
@@ -145,6 +145,7 @@ services:
 
 volumes:
   avito-logs-volume:
+  avitoscraperdata:
   frontentdata:
   backenddata:
   monstachedata:
