@@ -430,9 +430,14 @@ import CrawlerDetails from './CrawlerDetails.vue';
         },
 
         computeTimeToPullCrawlerData(number_of_products_found){
+            if (number_of_products_found == undefined) {
+              return 1000
+            }
             let number = number_of_products_found.toString().length;
             console.log('nbr : '+number)
-            if (this.getJobState == 'pending') {
+            console.log("getJobState"+this.getJobState)
+
+            if (this.getJobState != 'running') {
               return 1000
             }
             else if ( number == 1 || number == 2) {

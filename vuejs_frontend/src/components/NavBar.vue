@@ -53,6 +53,7 @@
         class="ma-2"
         color="green"
         text-color="white"
+        v-if="getUser != null"
       >
         <v-icon left dark>mdi-account-tie</v-icon>
         {{ getUser.username }}
