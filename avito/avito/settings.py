@@ -96,7 +96,7 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 # MongoDB settings
-MONGODB_URI = "mongodb://mongo1:27017/"
+MONGODB_URI = "mongodb://mongo1:27017,mongo2:27017,mongo3:27017/?replicaSet=replication"
 MONGODB_DB = "avito"
 
 # CLI LOGS

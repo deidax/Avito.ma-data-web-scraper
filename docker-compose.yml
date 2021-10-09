@@ -57,7 +57,7 @@ services:
         - "9200:9200"
         - "9300:9300"
     healthcheck:
-      test: "wget -q -O - http://localhost:9200/_cat/health"
+      test: "curl -s http://elasticsearch:9200 >/dev/null || exit 1"
       interval: 1s
       timeout: 30s
       retries: 300
