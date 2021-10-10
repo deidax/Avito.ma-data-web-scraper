@@ -294,7 +294,7 @@ import CrawlerDetails from './CrawlerDetails.vue';
       },  
 
       getJobState(newVal, oldVal){
-          console.log("TIME TO PULL---> "+this.timeToPullFreshCrawlerData)
+          // console.log("TIME TO PULL---> "+this.timeToPullFreshCrawlerData)
           this.pollingFreshCrawlersInfo()
       },
 
@@ -429,34 +429,34 @@ import CrawlerDetails from './CrawlerDetails.vue';
           this.timeCountDown(this.getCrawlerDetails.estimatred_count_down_date)
         },
 
-        computeTimeToPullCrawlerData(number_of_products_found){
-            if (number_of_products_found == undefined) {
-              return 1000
-            }
-            let number = number_of_products_found.toString().length;
-            console.log('nbr : '+number)
-            console.log("getJobState"+this.getJobState)
+        // computeTimeToPullCrawlerData(number_of_products_found){
+        //     if (number_of_products_found == undefined) {
+        //       return 1000
+        //     }
+        //     let number = number_of_products_found.toString().length;
+        //     console.log('nbr : '+number)
+        //     console.log("getJobState"+this.getJobState)
 
-            if (this.getJobState != 'running') {
-              return 1000
-            }
-            else if ( number == 1 || number == 2) {
-              return 2000
-            }
-            else if ( number == 3){
-              return 6000
-            }
-            else if ( number == 4){
-              return 30000
-            }
-            else if ( number == 5){
-              return 50000
-            }
-            else if ( number == 6){
-              return 100000
-            }
-            return 200000
-        },
+        //     if (this.getJobState != 'running') {
+        //       return 1000
+        //     }
+        //     else if ( number == 1 || number == 2) {
+        //       return 2000
+        //     }
+        //     else if ( number == 3){
+        //       return 6000
+        //     }
+        //     else if ( number == 4){
+        //       return 30000
+        //     }
+        //     else if ( number == 5){
+        //       return 50000
+        //     }
+        //     else if ( number == 6){
+        //       return 100000
+        //     }
+        //     return 200000
+        // },
 
         calculatePercentage(value, total){
           return Math.ceil((value/total) * 100)
@@ -490,7 +490,7 @@ import CrawlerDetails from './CrawlerDetails.vue';
                   this.crawlerAlertIcon = 'mdi-spider'
                 }
               }
-              .bind(this), this.computeTimeToPullCrawlerData(this.getCrawlerDetails.number_of_products_found))
+              .bind(this), 5000)
         },
 
         timeCountDown(time){
