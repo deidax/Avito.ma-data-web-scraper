@@ -19,7 +19,6 @@ const AppDataState = createPersistedState({
         'Auth.user',
         'Auth.authenticated',
         'Auth.token',
-        'Crawler.products_data'
     ]
 })
 
