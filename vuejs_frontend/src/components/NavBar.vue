@@ -13,8 +13,15 @@
 
       <v-btn
         text
+        to="/dashboard">
+        <v-icon left>mdi-desktop-mac-dashboard</v-icon>
+        Dashboard
+      </v-btn>
+
+      <v-btn
+        text
         :href="kibana_href">
-        <v-icon left>mdi-monitor-dashboard</v-icon>
+        <v-icon left>mdi-view-dashboard</v-icon>
         Kibana
       </v-btn>
       <v-btn
