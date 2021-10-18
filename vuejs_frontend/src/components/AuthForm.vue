@@ -1,58 +1,43 @@
 <template>
-   <v-app id="inspire">
-      <v-main>
-         <v-container fluid fill-height>
-            <v-layout align-center justify-center>
-               <v-flex xs12 sm8 md4>
-                  <v-card class="elevation-12">
-                     <v-toolbar dark color="primary">
-                        <v-toolbar-title>Login form</v-toolbar-title>
-                     </v-toolbar>
-                     <v-card-text>
-                       
-                        <v-alert
-                          v-if="getAuthErrors != null"
-                          dense
-                          outlined
-                          type="error"
-                        >
-                          <strong>Oops!..Something is wrong:</strong>
-                          <ul v-if="getAuthErrors.non_field_errors != null">
-                            <li v-for="(error,index) in getAuthErrors.non_field_errors" :key="index">{{error}}</li>
-                          </ul>
-                          <ul v-else>
-                            <li>Please enter a correct username and password</li>
-                          </ul>
-                        </v-alert>
+   <!-- <v-app id="inspire"> -->
+            <v-form @submit.prevent="loginUser" id="auth-form">
+               <v-alert
+               v-if="getAuthErrors != null"
+               dense
+               outlined
+               type="error"
+            >
+               <strong>Oops!..Something is wrong:</strong>
+               <ul v-if="getAuthErrors.non_field_errors != null">
+                  <li v-for="(error,index) in getAuthErrors.non_field_errors" :key="index">{{error}}</li>
+               </ul>
+               <ul v-else>
+                  <li>Please enter a correct username and password</li>
+               </ul>
+            </v-alert>
 
-                        <v-form class="login" @submit.prevent="loginUser" id="auth-form">
-                           <v-text-field
-                              prepend-icon="mdi-account-tie"
-                              v-model="form.username"
-                              name="Username"
-                              label="Username"
-                              type="text"
-                           ></v-text-field>
-                           <v-text-field
-                              id="password"
-                              prepend-icon="mdi-lock"
-                              v-model="form.password"
-                              name="password"
-                              label="Password"
-                              type="password"
-                           ></v-text-field>
-                        </v-form>
-                     </v-card-text>
-                     <v-card-actions>
-                        <v-spacer></v-spacer>
-                        <v-btn type="submit" color="primary" form="auth-form" :loading="isLoading">Login</v-btn>
-                     </v-card-actions>
-                  </v-card>
-               </v-flex>
-            </v-layout>
-         </v-container>
-      </v-main>
-   </v-app>
+            <v-text-field
+                  outlined
+                  append-icon="mdi-account-tie"
+                  v-model="form.username"
+                  name="Username"
+                  label="Username"
+                  type="text"
+               ></v-text-field>
+               <v-text-field
+                  outlined
+                  id="password"
+                  append-icon="mdi-lock"
+                  v-model="form.password"
+                  name="password"
+                  label="Password"
+                  type="password"
+               ></v-text-field>
+
+
+               <v-btn x-large class="col-md-12 col-lg-12 mx-auto my-12" type="submit" color="primary" form="auth-form" :loading="isLoading">Login</v-btn>
+          </v-form>
+   <!-- </v-app> -->
 </template>
 
 
