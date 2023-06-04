@@ -38,7 +38,7 @@ class ProductSpider(CrawlSpider):
         self.start_urls.append(kwargs.get('url'))
         self.options = kwargs.get('options')
         self.rules = [
-            Rule(LinkExtractor(restrict_xpaths='//div[contains(@class, "cslvkF")]/a'), callback='parse', follow=True),
+            Rule(LinkExtractor(restrict_xpaths='//div[contains(@class, "jXwFwm")]/a'), callback='parse', follow=True),
             Rule(LinkExtractor(restrict_xpaths='//div[contains(@class, "listing")]/div/a'), callback='parse_products', follow=True),
         ]
         print('\n\n')
