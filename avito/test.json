@@ -1,0 +1,493 @@
+{
+  "props": {
+    "pageProps": {
+      "lang": "fr",
+      "componentProps": {
+        "error": null,
+        "adInfo": {
+          "ad": {
+            "id": "71340111",
+            "listId": "53145033",
+            "subject": "Logicom ",
+            "description": "très bon état\nsystème kaios\n2 carte sim card SD\nbatterie 2000mah\nWiFi 4G GPS bluetooth\nWhatsApp Facebook YouTube....\n",
+            "price": { "value": 250, "currency": "DH" },
+            "listTime": "2023-06-12T11:16:06Z",
+            "location": {
+              "city": {
+                "id": "12",
+                "name": "Rabat",
+                "trackingValue": "rabat",
+                "slug": "Rabat",
+                "trackingName": "rabat"
+              },
+              "area": {},
+              "address": null
+            },
+            "type": { "key": "s", "label": "à vendre" },
+            "category": {
+              "id": "5010",
+              "name": "Téléphones",
+              "trackingValue": "téléphones",
+              "parent": {
+                "id": "5000",
+                "name": "INFORMATIQUE ET MULTIMEDIA",
+                "trackingValue": "informatique_et_multimedia",
+                "trackingName": "informatique_et_multimedia"
+              },
+              "trackingName": "téléphones",
+              "parentsNames": ["INFORMATIQUE ET MULTIMEDIA", "Téléphones"]
+            },
+            "vertical": "INFORMATIQUE ET MULTIMEDIA",
+            "seller": {
+              "id": "1833",
+              "uuid": "A1833",
+              "type": "private",
+              "regTime": 2014,
+              "name": "youness",
+              "isEcommerce": false
+            },
+            "isImmoneuf": false,
+            "immoneufProjectId": null,
+            "isPhoneHidden": false,
+            "phone": "0656079516",
+            "isPhoneVerified": false,
+            "hasShipping": false,
+            "isSaved": false,
+            "isPublicAuction": false,
+            "isEligibleToExpertize": false,
+            "params": {
+              "primary": [
+                {
+                  "key": "SELL",
+                  "label": "Type",
+                  "value": "Téléphones, à vendre"
+                },
+                { "label": "Secteur" },
+                {
+                  "key": "condition",
+                  "label": "État",
+                  "value": "Bon état",
+                  "trackingValue": "bon_état"
+                }
+              ],
+              "secondary": [],
+              "extra": []
+            },
+            "images": [
+              {
+                "paths": {
+                  "standard": "https://content.avito.ma/classifieds/images/10099562320?t=images",
+                  "fullHd": "https://content.avito.ma/classifieds/images/10099562320?t=full_hd",
+                  "smallThumbnail": "https://content.avito.ma/classifieds/images/10099562320?t=card"
+                }
+              },
+              {
+                "paths": {
+                  "standard": "https://content.avito.ma/classifieds/images/10099562317?t=images",
+                  "fullHd": "https://content.avito.ma/classifieds/images/10099562317?t=full_hd",
+                  "smallThumbnail": "https://content.avito.ma/classifieds/images/10099562317?t=card"
+                }
+              },
+              {
+                "paths": {
+                  "standard": "https://content.avito.ma/classifieds/images/10099562324?t=images",
+                  "fullHd": "https://content.avito.ma/classifieds/images/10099562324?t=full_hd",
+                  "smallThumbnail": "https://content.avito.ma/classifieds/images/10099562324?t=card"
+                }
+              },
+              {
+                "paths": {
+                  "standard": "https://content.avito.ma/classifieds/images/10099562326?t=images",
+                  "fullHd": "https://content.avito.ma/classifieds/images/10099562326?t=full_hd",
+                  "smallThumbnail": "https://content.avito.ma/classifieds/images/10099562326?t=card"
+                }
+              },
+              {
+                "paths": {
+                  "standard": "https://content.avito.ma/classifieds/images/10099562327?t=images",
+                  "fullHd": "https://content.avito.ma/classifieds/images/10099562327?t=full_hd",
+                  "smallThumbnail": "https://content.avito.ma/classifieds/images/10099562327?t=card"
+                }
+              }
+            ],
+            "videos": [],
+            "friendlyUrl": {
+              "url": "https://www.avito.ma/fr/rabat/téléphones/Logicom__53145033.htm"
+            },
+            "rentalBlockedDates": [],
+            "salesNoticeLink": null,
+            "discount": null
+          },
+          "breadcrumb": [
+            { "label": "Accueil", "href": "https://www.avito.ma" },
+            {
+              "label": "Tout le Maroc",
+              "href": "https://www.avito.ma/fr/maroc"
+            },
+            { "label": "Rabat", "href": "https://www.avito.ma/fr/rabat" },
+            {
+              "label": "INFORMATIQUE ET MULTIMEDIA",
+              "href": "https://www.avito.ma/fr/rabat/informatique_et_multimedia"
+            },
+            {
+              "label": "Téléphones",
+              "href": "https://www.avito.ma/fr/rabat/téléphones"
+            },
+            { "label": "Logicom " }
+          ],
+          "friendlyUrlSQ": null,
+          "searchQuery": null
+        }
+      },
+      "apolloState": {
+        "AdCategory:5000": {
+          "__typename": "AdCategory",
+          "id": "5000",
+          "name": "INFORMATIQUE ET MULTIMEDIA",
+          "trackingValue": "informatique_et_multimedia"
+        },
+        "AdCategory:5010": {
+          "__typename": "AdCategory",
+          "id": "5010",
+          "name": "Téléphones",
+          "trackingValue": "téléphones",
+          "parent": { "__ref": "AdCategory:5000" }
+        },
+        "City:12": {
+          "__typename": "City",
+          "id": "12",
+          "name": "Rabat",
+          "trackingValue": "rabat"
+        },
+        "TextAdParam:condition": {
+          "__typename": "TextAdParam",
+          "id": "condition",
+          "name": "État",
+          "textValue": "Bon état",
+          "trackingValue": "bon_état"
+        },
+        "ROOT_QUERY": {
+          "__typename": "Query",
+          "getPublishedAd({\"query\":{\"listId\":\"53145033\"}})": {
+            "__typename": "PublishedAdResponse",
+            "ad": {
+              "__typename": "PublishedAd",
+              "adId": "71340111",
+              "listId": "53145033",
+              "listTime": "2023-06-12T11:16:06Z",
+              "title": "Logicom ",
+              "description": "très bon état\nsystème kaios\n2 carte sim card SD\nbatterie 2000mah\nWiFi 4G GPS bluetooth\nWhatsApp Facebook YouTube....\n",
+              "price": {
+                "__typename": "AdPrice",
+                "withCurrency": "250 DH",
+                "withoutCurrency": 250
+              },
+              "type": {
+                "__typename": "AdType",
+                "key": "SELL",
+                "name": "à vendre"
+              },
+              "category": { "__ref": "AdCategory:5010" },
+              "location": {
+                "__typename": "AdLocation",
+                "city": { "__ref": "City:12" },
+                "area": null,
+                "address": null
+              },
+              "offersShipping": false,
+              "isEcommerce": false,
+              "isInMyFavorites": false,
+              "salesNoticeLink": null,
+              "reservedDays": null,
+              "sellerType": "PRIVATE",
+              "seller": {
+                "__typename": "PrivateProfile",
+                "accountId": "1833",
+                "name": "youness",
+                "phone": {
+                  "__typename": "ProfilePhone",
+                  "number": "0656079516",
+                  "verified": false
+                },
+                "registrationDay": "2014-07-22"
+              },
+              "params": {
+                "__typename": "PublishedAdParams",
+                "primary": [{ "__ref": "TextAdParam:condition" }],
+                "secondary": null,
+                "extra": null
+              },
+              "isImmoneuf": false,
+              "immoneufProjectId": null,
+              "media": {
+                "__typename": "AdMediaMetadata",
+                "media": {
+                  "__typename": "AdMedia",
+                  "videos": [],
+                  "images": [
+                    {
+                      "__typename": "AdImage",
+                      "paths": {
+                        "__typename": "AdImagePaths",
+                        "standard": "https://content.avito.ma/classifieds/images/10099562320?t=images",
+                        "fullHd": "https://content.avito.ma/classifieds/images/10099562320?t=full_hd",
+                        "smallThumbnail": "https://content.avito.ma/classifieds/images/10099562320?t=card"
+                      }
+                    },
+                    {
+                      "__typename": "AdImage",
+                      "paths": {
+                        "__typename": "AdImagePaths",
+                        "standard": "https://content.avito.ma/classifieds/images/10099562317?t=images",
+                        "fullHd": "https://content.avito.ma/classifieds/images/10099562317?t=full_hd",
+                        "smallThumbnail": "https://content.avito.ma/classifieds/images/10099562317?t=card"
+                      }
+                    },
+                    {
+                      "__typename": "AdImage",
+                      "paths": {
+                        "__typename": "AdImagePaths",
+                        "standard": "https://content.avito.ma/classifieds/images/10099562324?t=images",
+                        "fullHd": "https://content.avito.ma/classifieds/images/10099562324?t=full_hd",
+                        "smallThumbnail": "https://content.avito.ma/classifieds/images/10099562324?t=card"
+                      }
+                    },
+                    {
+                      "__typename": "AdImage",
+                      "paths": {
+                        "__typename": "AdImagePaths",
+                        "standard": "https://content.avito.ma/classifieds/images/10099562326?t=images",
+                        "fullHd": "https://content.avito.ma/classifieds/images/10099562326?t=full_hd",
+                        "smallThumbnail": "https://content.avito.ma/classifieds/images/10099562326?t=card"
+                      }
+                    },
+                    {
+                      "__typename": "AdImage",
+                      "paths": {
+                        "__typename": "AdImagePaths",
+                        "standard": "https://content.avito.ma/classifieds/images/10099562327?t=images",
+                        "fullHd": "https://content.avito.ma/classifieds/images/10099562327?t=full_hd",
+                        "smallThumbnail": "https://content.avito.ma/classifieds/images/10099562327?t=card"
+                      }
+                    }
+                  ]
+                }
+              },
+              "discount": null
+            }
+          }
+        }
+      },
+      "dir": "ltr",
+      "reduxStore": {},
+      "initialReduxState": {
+        "ad": {
+          "view": {
+            "adInfo": {
+              "id": "71340111",
+              "listId": "53145033",
+              "subject": "Logicom ",
+              "description": "très bon état\nsystème kaios\n2 carte sim card SD\nbatterie 2000mah\nWiFi 4G GPS bluetooth\nWhatsApp Facebook YouTube....\n",
+              "price": { "value": 250, "currency": "DH" },
+              "listTime": "2023-06-12T11:16:06Z",
+              "location": {
+                "city": {
+                  "id": "12",
+                  "name": "Rabat",
+                  "trackingValue": "rabat",
+                  "slug": "Rabat",
+                  "trackingName": "rabat"
+                },
+                "area": {},
+                "address": null
+              },
+              "type": { "key": "s", "label": "à vendre" },
+              "category": {
+                "id": "5010",
+                "name": "Téléphones",
+                "trackingValue": "téléphones",
+                "parent": {
+                  "id": "5000",
+                  "name": "INFORMATIQUE ET MULTIMEDIA",
+                  "trackingValue": "informatique_et_multimedia",
+                  "trackingName": "informatique_et_multimedia"
+                },
+                "trackingName": "téléphones",
+                "parentsNames": ["INFORMATIQUE ET MULTIMEDIA", "Téléphones"]
+              },
+              "vertical": "INFORMATIQUE ET MULTIMEDIA",
+              "seller": {
+                "id": "1833",
+                "uuid": "A1833",
+                "type": "private",
+                "regTime": 2014,
+                "name": "youness",
+                "isEcommerce": false
+              },
+              "isImmoneuf": false,
+              "immoneufProjectId": null,
+              "isPhoneHidden": false,
+              "phone": "0656079516",
+              "isPhoneVerified": false,
+              "hasShipping": false,
+              "isSaved": false,
+              "isPublicAuction": false,
+              "isEligibleToExpertize": false,
+              "params": {
+                "primary": [
+                  {
+                    "key": "SELL",
+                    "label": "Type",
+                    "value": "Téléphones, à vendre"
+                  },
+                  { "label": "Secteur" },
+                  {
+                    "key": "condition",
+                    "label": "État",
+                    "value": "Bon état",
+                    "trackingValue": "bon_état"
+                  }
+                ],
+                "secondary": [],
+                "extra": []
+              },
+              "images": [
+                {
+                  "paths": {
+                    "standard": "https://content.avito.ma/classifieds/images/10099562320?t=images",
+                    "fullHd": "https://content.avito.ma/classifieds/images/10099562320?t=full_hd",
+                    "smallThumbnail": "https://content.avito.ma/classifieds/images/10099562320?t=card"
+                  }
+                },
+                {
+                  "paths": {
+                    "standard": "https://content.avito.ma/classifieds/images/10099562317?t=images",
+                    "fullHd": "https://content.avito.ma/classifieds/images/10099562317?t=full_hd",
+                    "smallThumbnail": "https://content.avito.ma/classifieds/images/10099562317?t=card"
+                  }
+                },
+                {
+                  "paths": {
+                    "standard": "https://content.avito.ma/classifieds/images/10099562324?t=images",
+                    "fullHd": "https://content.avito.ma/classifieds/images/10099562324?t=full_hd",
+                    "smallThumbnail": "https://content.avito.ma/classifieds/images/10099562324?t=card"
+                  }
+                },
+                {
+                  "paths": {
+                    "standard": "https://content.avito.ma/classifieds/images/10099562326?t=images",
+                    "fullHd": "https://content.avito.ma/classifieds/images/10099562326?t=full_hd",
+                    "smallThumbnail": "https://content.avito.ma/classifieds/images/10099562326?t=card"
+                  }
+                },
+                {
+                  "paths": {
+                    "standard": "https://content.avito.ma/classifieds/images/10099562327?t=images",
+                    "fullHd": "https://content.avito.ma/classifieds/images/10099562327?t=full_hd",
+                    "smallThumbnail": "https://content.avito.ma/classifieds/images/10099562327?t=card"
+                  }
+                }
+              ],
+              "videos": [],
+              "friendlyUrl": {
+                "url": "https://www.avito.ma/fr/rabat/téléphones/Logicom__53145033.htm"
+              },
+              "rentalBlockedDates": [],
+              "salesNoticeLink": null,
+              "discount": null
+            },
+            "alertOptions": { "showAlert": false },
+            "toastNotification": {},
+            "reportSubmissionStatus": "REPORT_SUBMISSION_UNSUBMITTED",
+            "hasStickySeller": false,
+            "isWidgetViewable": false,
+            "similarAds": null,
+            "recommendedAds": {
+              "adsIds": null,
+              "metadata": {
+                "transactionId": null,
+                "listName": null,
+                "queryParams": { "itemId": null }
+              }
+            },
+            "activeModal": null,
+            "navigationLinks": { "list": null },
+            "errorData": { "image": null, "title": null, "description": null },
+            "ncLeadFormSuccess": false,
+            "searchQuery": { "query": null, "all": null }
+          }
+        },
+        "avitoMag": { "posts": [] },
+        "authentication": { "isLoggedIn": false },
+        "userProfile": {
+          "userId": null,
+          "name": null,
+          "email": null,
+          "type": null,
+          "role": null,
+          "phone": null,
+          "phoneHidden": null,
+          "region": null,
+          "shopInfo": {},
+          "notifParams": {},
+          "userNotifChannel": {},
+          "sellerInfo": {}
+        },
+        "page": {
+          "app": { "version": "1.51.0", "name": "phoenix" },
+          "loginWall": { "withTabs": false },
+          "env": {
+            "visitorId": "3d300f64-fd0e-4a8f-bea7-70dd9a64de2a",
+            "sourceElement": null,
+            "gaSessionId": null
+          },
+          "lang": "fr",
+          "isMobile": false,
+          "isTablet": false,
+          "isDesktop": true,
+          "page_type": "adview",
+          "breadcrumb": [
+            { "label": "Accueil", "href": "https://www.avito.ma" },
+            {
+              "label": "Tout le Maroc",
+              "href": "https://www.avito.ma/fr/maroc"
+            },
+            { "label": "Rabat", "href": "https://www.avito.ma/fr/rabat" },
+            {
+              "label": "INFORMATIQUE ET MULTIMEDIA",
+              "href": "https://www.avito.ma/fr/rabat/informatique_et_multimedia"
+            },
+            {
+              "label": "Téléphones",
+              "href": "https://www.avito.ma/fr/rabat/téléphones"
+            },
+            { "label": "Logicom " },
+            { "label": "Logicom " }
+          ]
+        },
+        "ui": {
+          "loading": false,
+          "formLoading": false,
+          "toastMessage": null,
+          "alertMessage": null,
+          "modalInfo": null,
+          "success": false
+        }
+      }
+    }
+  },
+  "page": "/classified/view",
+  "query": {
+    "lang": "fr",
+    "region": "rabat",
+    "category": "téléphones",
+    "slug_": "Logicom__",
+    "id": "53145033"
+  },
+  "buildId": "Jl1rqUylizY4WkuSvm2H8",
+  "runtimeConfig": { "ENV": "production" },
+  "isFallback": false,
+  "dynamicIds": ["kzD3", "BeZm"],
+  "customServer": true,
+  "gip": true
+}

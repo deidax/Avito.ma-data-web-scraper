@@ -13,6 +13,10 @@ import pyfiglet
 from scrapy.utils.project import get_project_settings
 import datetime
 import os
+from dotenv import dotenv_values, load_dotenv
+
+# Load the .env file
+load_dotenv()
 
 class ProductSpider(CrawlSpider):
     name = "productspider"
@@ -33,12 +37,15 @@ class ProductSpider(CrawlSpider):
     display_number_of_products = True
     is_multiple_pages = False
     
+    # Access the environment variables
+    LINKER_CODE = dotenv_values()["LINKER_CODE"]
+    
     def __init__(self, *args, **kwargs):
         self.start_urls = []
         self.start_urls.append(kwargs.get('url'))
         self.options = kwargs.get('options')
         self.rules = [
-            Rule(LinkExtractor(restrict_xpaths='//div[contains(@class, "jXwFwm")]/a'), callback='parse', follow=True),
+            Rule(LinkExtractor(restrict_xpaths=f'//div[contains(@class, "{self.LINKER_CODE}")]/a'), callback='parse', follow=True),
             Rule(LinkExtractor(restrict_xpaths='//div[contains(@class, "listing")]/div/a'), callback='parse_products', follow=True),
         ]
         print('\n\n')
@@ -180,9 +187,10 @@ class ProductSpider(CrawlSpider):
         if 'price' in options:
             general_product_data_dict['price'] = product_general_data['price']['value']
         if 'seller_data' in options:
-            general_product_data_dict['seller_name'] = product_general_data['seller']['name']
-            general_product_data_dict['seller_type'] = product_general_data['seller']['type']
-            general_product_data_dict['seller_address'] = product_general_data['seller']['address']
+            seller = product_general_data['seller']
+            general_product_data_dict['seller_name'] = seller['name'] if 'name' in seller else 'N/A'
+            general_product_data_dict['seller_type'] = seller['type'] if 'type' in seller else 'N/A'
+            general_product_data_dict['seller_address'] = seller['address'] if 'address' in seller else 'N/A'
         if 'description' in options:
             general_product_data_dict['description'] = self.remove_html_tags(product_general_data['description'])
         if 'phone' in options:
@@ -201,13 +209,14 @@ class ProductSpider(CrawlSpider):
 
         general_product_data_dict['address'] = product_general_data['location']['address']
         general_product_data_dict['url'] = product_general_data['friendlyUrl']['url']
-        update_date_split = product_general_data['listTime']['raw'].split('+')
+        update_date_split = product_general_data['listTime']
         update_date = update_date_split[0].replace('T', ' ')
         general_product_data_dict['last_update_date'] = update_date
         general_product_data_dict['has_shipping'] = product_general_data['hasShipping']
 
         for i in product_params_murged_list:
-            product_params_murged_dict.update( { i['key'] : i['value'] } )
+            if 'key' in i and 'value' in i:
+                product_params_murged_dict.update( { i['key'] : i['value'] } )
 
         product_final_data = {**general_product_data_dict, **product_params_murged_dict}
 
