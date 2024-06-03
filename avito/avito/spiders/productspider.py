@@ -28,7 +28,7 @@ class ProductSpider(CrawlSpider):
 
     # rules = [
     #     Rule(LinkExtractor(restrict_xpaths='//div[contains(@class, "cslvkF")]/a'), callback='parse', follow=True),
-    #     Rule(LinkExtractor(restrict_xpaths='//div[contains(@class, "listing")]/div/a'), callback='parse_products', follow=True)
+    #     Rule(LinkExtractor(restrict_xpaths='//*[@id="__next"]/div/main/div/div[5]/div[1]/div/div[1]'), callback='parse_products', follow=True)
     # ]
     rules = []
 
@@ -40,17 +40,21 @@ class ProductSpider(CrawlSpider):
     # Access the environment variables
     LINKER_CODE = dotenv_values()["LINKER_CODE"]
     
+    
     def __init__(self, *args, **kwargs):
         self.start_urls = []
         self.start_urls.append(kwargs.get('url'))
         self.options = kwargs.get('options')
         self.rules = [
             Rule(LinkExtractor(restrict_xpaths=f'//div[contains(@class, "{self.LINKER_CODE}")]/a'), callback='parse', follow=True),
-            Rule(LinkExtractor(restrict_xpaths='//div[contains(@class, "listing")]/div/a'), callback='parse_products', follow=True),
+            Rule(LinkExtractor(restrict_xpaths='//*[@id="__next"]/div/main/div/div[5]/div[1]/div/div[1]'), callback='parse_products', follow=True),
         ]
         print('\n\n')
         authors = "------- PROJET PFE, MASTER BIG DATA ENSA KENITRA :: KHALIL DIDA & ZAKARIA BOUZANGAD -------\n"
-        scrapyTitle = pyfiglet.figlet_format("AvitoScraper", font='speed')
+        scrapyTitle = pyfiglet.figlet_format("\nAvitoScraper", font='speed')
+        print("\n================================================")
+        print(f"LINKER_CODE: {self.LINKER_CODE}\n")
+        print("================================================")
         print(colored(scrapyTitle, 'yellow'))
         print(colored(authors, 'yellow'))
         self.logger.info(authors)

@@ -1,5 +1,5 @@
 # scrapy crawl productspider -a url=https://www.avito.ma/fr/rabat/t%C3%A9l%C3%A9phones-%C3%A0_vendre -a options=['price','seller_name', 'subject','seller_phone','city']
-FROM python:3
+FROM python:3.10
 ENV PYTHONUNBUFFERED=1
 
 WORKDIR /pfe/avito-scrapy-server
