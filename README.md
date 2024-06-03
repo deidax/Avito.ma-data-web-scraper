@@ -9,7 +9,7 @@ Make sure to have docker and docker compose installed
 Clone project
 
 ```bash
-  git clone https://github.com/deidax/pfe.git
+  https://github.com/deidax/app_scraper.git
 ```
 Build project with docker compose
 
